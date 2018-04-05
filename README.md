@@ -14,21 +14,9 @@ LogicMonitor-Puppet-v4 is a Puppet module for automating and managing your Logic
 
 ## Requirements
 
-** Ruby (1.9.3, 2.0.X, 2.1.X) and Puppet 3.X OR 4.X **
-
-This is a module written for Puppet 4
-
-** Ruby Gems  JSON Gem **
-
-This module interacts with LogicMonitor's API which is JSON based.
-The JSON gem needed to parse responses from the LogicMonitor API.
-Our Gemfile enforces json ruby gem version 1.7.7, which may be installed
-via
-```
-$ bundle install
-```
-
-** storeconfigs **
+-	[Ruby](https://www.ruby-lang.org/en/downloads/) (1.9.3, 2.0.x, 2.1.x)
+-	[Rubygems](https://rubygems.org/gems/json) (json 1.7.7)
+-	[Puppet](https://github.com/puppetlabs/puppet) (3.x or 4.x)
 
 This module uses exported resources extensively. Exported resources require storeconfigs = true.
 
