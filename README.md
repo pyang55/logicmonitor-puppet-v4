@@ -4,57 +4,12 @@
 ---
 
 <p align="center">
+ [![Puppet Forge](https://img.shields.io/puppetforge/v/logicmonitor/logicmonitor.svg)](https://forge.puppetlabs.com/logicmonitor/logicmonitor) [![Puppet Forge](https://img.shields.io/puppetforge/dt/logicmonitor/logicmonitor.svg)](https://forge.puppetlabs.com/logicmonitor/logicmonitor)
 
 LogicMonitor is a Cloud-based, full stack, IT infrastructure monitoring solution that
 allows you to manage your infrastructure monitoring from the Cloud.
 LogicMonitor-Puppet-v4 is a Puppet module for automating and managing your LogicMonitor
 (SaaS based, full stack, datacenter monitoring) portal via Puppet, specifically for version 4.
-
-## LogicMonitor's Puppet module overview
-LogicMonitor's Puppet module defines 5 classes and 4 custom resource types. For additional documentation visit
-<insert Help Documentation URL>
-
-Classes:
-* logicmonitor: Handles setting credentials needed for interacting with the LogicMonitor API.
-* logicmonitor::master: Collects the exported lm_host resources and lm_hostgroup resources. Communicates with the LogicMonitor API
-* logicmonitor::collector: Handles LogicMonitor collector management for the device. Declares an instance of lm_collector and lm_installer resources.
-* logicmonitor::device: Declares an exported lm_device resource.
-* logicmonitor::device_group: Declares an export lm_device_group resource.
-
-Resource Types:
-* lm_device_group: Defines the behavior of the handling of LogicMonitor device groups. Recommend using exported resources.
-* lm_device: Defines the handling behavior of LogicMonitor devices. Used only within logicmonitor::device class.
-* lm_collector: Defines the handling behavior of LogicMonitor collectors. Used only with logicmonitor::collector class.
-* lm_installer: Defines the handling behavior of LogicMonitor collector installation binaries. Used only within logicmonitor::collector class.
-
-So far, we've implemented the following features:
-
-* Collector Management
-* Device Management
-  * Ensurable (present/absent)
-  * Managed parameters:
-    * Display name
-    * Description
-    * Collector
-    * Disable Alerting
-    * Group membership
-      * Creation of groups/paths which do not yet exist
-    * Properties
-* Device Group Management
-  * Ensurable (present/absent)
-  * Managed parameters:
-    * Display name
-    * Description
-    * Collector
-    * Disable Alerting
-    * Creation of parent groups/paths which do not yet exist
-    * Properties
-
-Upcoming features:
-
-* User management
-  * Add and remove users
-  * Assign user roles
 
 ## Requirements
 
