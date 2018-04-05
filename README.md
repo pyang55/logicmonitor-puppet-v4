@@ -1,12 +1,17 @@
-#LogicMonitor-Puppet-v4
+# LogicMonitor-Puppet-v4
+<p align="center"><a href=""><img src="https://devops.com/wp-content/uploads/2015/04/puppet.jpg"></a></p>
+
+---
+
+<p align="center">
 
 LogicMonitor is a Cloud-based, full stack, IT infrastructure monitoring solution that
 allows you to manage your infrastructure monitoring from the Cloud.
 LogicMonitor-Puppet-v4 is a Puppet module for automating and managing your LogicMonitor
 (SaaS based, full stack, datacenter monitoring) portal via Puppet, specifically for version 4.
 
-##LogicMonitor's Puppet module overview
-LogicMonitor's Puppet module defines 5 classes and 4 custom resource types. For additional documentation visit 
+## LogicMonitor's Puppet module overview
+LogicMonitor's Puppet module defines 5 classes and 4 custom resource types. For additional documentation visit
 <insert Help Documentation URL>
 
 Classes:
@@ -14,7 +19,7 @@ Classes:
 * logicmonitor::master: Collects the exported lm_host resources and lm_hostgroup resources. Communicates with the LogicMonitor API
 * logicmonitor::collector: Handles LogicMonitor collector management for the device. Declares an instance of lm_collector and lm_installer resources.
 * logicmonitor::device: Declares an exported lm_device resource.
-* logicmonitor::device_group: Declares an export lm_device_group resource. 
+* logicmonitor::device_group: Declares an export lm_device_group resource.
 
 Resource Types:
 * lm_device_group: Defines the behavior of the handling of LogicMonitor device groups. Recommend using exported resources.
@@ -59,9 +64,9 @@ This is a module written for Puppet 4
 
 ** Ruby Gems  JSON Gem **
 
-This module interacts with LogicMonitor's API which is JSON based. 
-The JSON gem needed to parse responses from the LogicMonitor API. 
-Our Gemfile enforces json ruby gem version 1.7.7, which may be installed 
+This module interacts with LogicMonitor's API which is JSON based.
+The JSON gem needed to parse responses from the LogicMonitor API.
+Our Gemfile enforces json ruby gem version 1.7.7, which may be installed
 via
 ```
 $ bundle install
@@ -120,7 +125,7 @@ SSL with your LogicMonitor account.
       # There are 2 methods for defining device groups.
       # If you are only defining a single device group resource per node definition,
       # You can use the class syntax.
-      # 
+      #
       # e.g.
       #
       # class { 'logicmonitor::device_group' :
@@ -146,7 +151,7 @@ SSL with your LogicMonitor account.
       }
 
       @@device_group {"/Operations":}
-      
+
       # Create US-West device group, as well as a sub-group "production".
       # The "production" group will have use a different SNMP community
 
@@ -155,7 +160,7 @@ SSL with your LogicMonitor account.
       @@device_group{"/US-West/production":
         properties => { "snmp.community"=>"secret_community_RO" },
       }
-      
+
       @@device_group{"/US-East":}
 
 
@@ -205,4 +210,3 @@ SSL with your LogicMonitor account.
         groups => ["/US-East"],
       }
     }
-
