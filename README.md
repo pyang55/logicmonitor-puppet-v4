@@ -4,7 +4,8 @@
 ---
 
 <p align="center">
- [![Puppet Forge](https://img.shields.io/puppetforge/v/logicmonitor/logicmonitor.svg)](https://forge.puppetlabs.com/logicmonitor/logicmonitor) [![Puppet Forge](https://img.shields.io/puppetforge/dt/logicmonitor/logicmonitor.svg)](https://forge.puppetlabs.com/logicmonitor/logicmonitor)
+<a href=""><img src="https://img.shields.io/puppetforge/v/logicmonitor/logicmonitor.svg"></a>
+<a href=""><img src="https://img.shields.io/puppetforge/dt/logicmonitor/logicmonitor.svg"></a>
 
 LogicMonitor is a Cloud-based, full stack, IT infrastructure monitoring solution that
 allows you to manage your infrastructure monitoring from the Cloud.
