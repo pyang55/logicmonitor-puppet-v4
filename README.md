@@ -23,25 +23,25 @@ This module uses exported resources extensively. Exported resources require stor
 ## Installation
 
 ### Using the Module Tool
-
+```ruby
     $ puppet module install logicmonitor-logicmonitor
-
+```
 ### Installing via GitHub
-
+```ruby
     $ cd /etc/puppet/modules
     $ git clone git://github.com/logicmonitor/logicmonitor-puppet-v4.git
     $ mv logicmonitor-puppet-v4 logicmonitor
-
+```
 ## Usage
 
 Add a LogicMonitor class with your LogicMonitor account information
-
+```ruby
     class { 'logicmonitor':
             account    => 'puppettest',
             access_id  => 'XXX',
             access_key => 'XXX',
     }
-
+```
 ### Logicmonitor::Master Node
 
 The LogicMonitor module uses the the "logicmonitor::master" class as trigger
@@ -49,7 +49,7 @@ to decide which device in your infrastructure will be used to modify your
 LogicMonitor account via API calls.  This device must be able to communicate via
 SSL with your LogicMonitor account.
 
-
+```ruby
     node "puppet-master.lax6.chimpco" {
       # the puppet master is where API calls to the LogicMonitor server are sent from
       include logicmonitor::master
@@ -117,9 +117,9 @@ SSL with your LogicMonitor account.
         properties => {"test.prop" => "test2", "test.port" => 12345 },
       }
     }
-
+```
 ### Add all appX.lax6 nodes into monitoring
-
+```ruby
     node /^app\d+.lax6/ {
       $lm_collector = "puppet-master.lax6.chimpco"
 
@@ -129,9 +129,9 @@ SSL with your LogicMonitor account.
         properties => {"jmx.pass" => "MonitorMEEEE_pw_", "jmx.port" => 12345 },
       }
     }
-
+```
 ### Additional collector and East Coast nodes
-
+```ruby
     # Install a collector on a dedicated machine for monitoring the East Coast
     # data center
     node "collector1.dc7.chimpco" {
@@ -154,3 +154,4 @@ SSL with your LogicMonitor account.
         groups => ["/US-East"],
       }
     }
+```
